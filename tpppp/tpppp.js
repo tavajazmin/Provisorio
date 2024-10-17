@@ -118,10 +118,10 @@ function mousePressed() {
     }
   } else if (estado==="sexta") {
     if (areaBoton(50, 50, 100, 50)) {
-      estado="septima";}
+      estado="septima";
    }else if (areaBoton(200, 50, 100, 50)) {
       estado = "septima_alt";  // Va al camino alterno
-   
+   }
   } else if (estado==="septima") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="octava";
