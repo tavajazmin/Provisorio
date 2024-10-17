@@ -68,7 +68,6 @@ function draw() {
   } else if (estado === "septima_alt") {
     cargarFotos(fotos, 10, 0, 0, 640, 480); // Imagen del camino alterno  
     dibujarBoton(50, 50, 100, 50); // Botón para ir a inicio
-    
    }else if (estado==="octava") {
     cargarFotos(fotos, 11, 0, 0, 640, 480);
      dibujarBoton(50, 50, 100, 50); // Botón para ir a juego
@@ -103,22 +102,30 @@ function mousePressed() {
       estado="tercera";
     }else if (areaBoton(200, 50, 100, 50)) {
       estado = "tercera_alt";  // Va al camino alterno
-     }
+     } 
   } else if (estado==="tercera") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="cuarta";
     }  
-  } else if (estado==="cuarta") {
+} else if (estado === "tercera_alt") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado = "inicio"; // Botón para volver a inicio desde el camino alterno
+    }
+} else if (estado==="cuarta") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="quinta";
-    }else if (areaBoton(200, 50, 100, 50)) {
+    } else if (areaBoton(200, 50, 100, 50)) {
       estado = "quinta_alt";  // Va al camino alterno
     }
   } else if (estado==="quinta") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="sexta";
     }
-  } else if (estado==="sexta") {
+} else if (estado === "quinta_alt") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado = "inicio"; // Botón para volver a inicio desde el camino alterno
+    }
+} else if (estado==="sexta") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="septima";
    }else if (areaBoton(200, 50, 100, 50)) {
@@ -128,7 +135,11 @@ function mousePressed() {
     if (areaBoton(50, 50, 100, 50)) {
       estado="octava";
     }
-  }
+} else if (estado === "septima_alt") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado = "inicio"; // Botón para volver a inicio desde el camino alterno
+    }
+}
   else if (estado==="octava") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="juego";
