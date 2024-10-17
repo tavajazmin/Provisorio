@@ -41,7 +41,8 @@ function draw() {
  
 } else if (estado === "tercera_alt") {
     cargarFotos(fotos, 4, 0, 0, 640, 480); // Imagen del camino alterno
- 
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a inicio
+    
 } else if (estado==="cuarta") {
     cargarFotos(fotos, 5, 0, 0, 640, 480);
     dibujarBoton(50, 50, 100, 50);  //Botón para ir a quinta
@@ -53,7 +54,7 @@ function draw() {
     
 } else if (estado === "quinta_alt") {
     cargarFotos(fotos, 7, 0, 0, 640, 480); // Imagen del camino alterno  
- 
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a inicio
  
 } else if (estado==="sexta") {
     cargarFotos(fotos, 8, 0, 0, 640, 480);
@@ -66,7 +67,8 @@ function draw() {
     
   } else if (estado === "septima_alt") {
     cargarFotos(fotos, 10, 0, 0, 640, 480); // Imagen del camino alterno  
-
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a inicio
+    
    }else if (estado==="octava") {
     cargarFotos(fotos, 11, 0, 0, 640, 480);
      dibujarBoton(50, 50, 100, 50); // Botón para ir a juego
