@@ -24,7 +24,7 @@ function draw() {
 
   if (estado==="inicio") {
     cargarFotos(fotos, 0, 0, 0, 640, 480);
-    dibujarBoton(50, 50, 100, 50); // Botón para ir a primera
+    dibujarBoton(220, 380, 200, 50); // Botón para ir a primera
  
 } else if (estado==="primera") {
     cargarFotos(fotos, 1, 0, 0, 640, 480);
@@ -90,7 +90,7 @@ function mousePressed() {
   //esto es para especificar qa que pantalla se mueve si sucede algo
 
   if (estado === "inicio") {
-    if (areaBoton(50, 50, 100, 50)) {
+    if (areaBoton(220, 380, 200, 50)) {
       estado = "primera";  // Va a la primera imagen
     }
   } else if (estado==="primera") {
