@@ -3,14 +3,14 @@ let estado;
 
 function preload() {
 
-  for (let i=0; i<9; i++) {
+  for (let i=0; i<15; i++) {
     fotos[i] = loadImage("data/foto"+i+".png");
   }
 }
 
 function setup() {
   createCanvas(640, 480);
-  for (let i=0; i<8; i++) {
+  for (let i=0; i<14; i++) {
     fotos[i].resize(640, 480);
   }
   estado = "inicio";
@@ -25,31 +25,64 @@ function draw() {
   if (estado==="inicio") {
     cargarFotos(fotos, 0, 0, 0, 640, 480);
     dibujarBoton(50, 50, 100, 50); // Botón para ir a primera
-  } else if (estado==="primera") {
+ 
+} else if (estado==="primera") {
     cargarFotos(fotos, 1, 0, 0, 640, 480);
-    dibujarBoton(50, 50, 100, 50); // Botón para ir a segunda
-    dibujarBoton(200, 50, 100, 50); // botón para ir a segunda_alt
-    //cuadroTexto(0, 370, 640, 200, 255, 255, 0, 150);
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a segunda 
+    
   } else if (estado==="segunda") {
     cargarFotos(fotos, 2, 0, 0, 640, 480);
     dibujarBoton(50, 50, 100, 50); // Botón para ir a tercera
-  } else if (estado === "segunda_alt") {
-    cargarFotos(fotos, 3, 0, 0, 640, 480); // Imagen del camino alterno
-  } else if (estado==="tercera") {
-    cargarFotos(fotos, 4, 0, 0, 640, 480);
-    dibujarBoton(50, 50, 100, 50);   //Botón para ir a cuarta
-    dibujarBoton(200, 50, 100, 50); // botón para ir a cuarta_alt
-  } else if (estado==="cuarta") {
+    dibujarBoton(200, 50, 100, 50); // botón para ir a tercera_alt
+ 
+} else if (estado==="tercera") {
+    cargarFotos(fotos, 3, 0, 0, 640, 480);
+    dibujarBoton(50, 50, 100, 50);   //Botón para ir a quinta
+ 
+} else if (estado === "tercera_alt") {
+    cargarFotos(fotos, 4, 0, 0, 640, 480); // Imagen del camino alterno
+ 
+} else if (estado==="cuarta") {
     cargarFotos(fotos, 5, 0, 0, 640, 480);
     dibujarBoton(50, 50, 100, 50);  //Botón para ir a quinta
-  } else if (estado === "cuarta_alt") {
-    cargarFotos(fotos, 6, 0, 0, 640, 480); // Imagen del camino alterno de la tercera
-  } else if (estado==="quinta") {
-    cargarFotos(fotos, 7, 0, 0, 640, 480);
+    dibujarBoton(200, 50, 100, 50); // botón para ir a quinta_alt
+    
+} else if (estado==="quinta") {
+    cargarFotos(fotos, 6, 0, 0, 640, 480);
     dibujarBoton(50, 50, 100, 50); //Botón para ir a sexta
-  } else if (estado==="sexta") {
+    
+} else if (estado === "quinta_alt") {
+    cargarFotos(fotos, 7, 0, 0, 640, 480); // Imagen del camino alterno  
+ 
+ 
+} else if (estado==="sexta") {
     cargarFotos(fotos, 8, 0, 0, 640, 480);
-  }
+    dibujarBoton(50, 50, 100, 50);  //Botón para ir a septima
+    dibujarBoton(200, 50, 100, 50); // botón para ir a septima_alt
+    
+  }else if (estado==="septima") {
+    cargarFotos(fotos, 9, 0, 0, 640, 480);
+    dibujarBoton(50, 50, 100, 50);  //Botón para ir a octava 
+    
+  } else if (estado === "septima_alt") {
+    cargarFotos(fotos, 10, 0, 0, 640, 480); // Imagen del camino alterno  
+
+   }else if (estado==="octava") {
+    cargarFotos(fotos, 11, 0, 0, 640, 480);
+     dibujarBoton(50, 50, 100, 50); // Botón para ir a juego
+     
+  }if (estado==="juego") {
+    cargarFotos(fotos, 12, 0, 0, 640, 480);
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a decima
+     
+  }if (estado==="decima") {
+    cargarFotos(fotos, 13, 0, 0, 640, 480);
+    dibujarBoton(50, 50, 100, 50); // Botón para ir a final
+ 
+   }if (estado==="onceava") {
+    cargarFotos(fotos, 14, 0, 0, 640, 480);
+    dibujarBoton(50, 50, 100, 50);  
+   }
 }
 function mousePressed() {
 
@@ -62,28 +95,55 @@ function mousePressed() {
   } else if (estado==="primera") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="segunda"; // Continúa al camino normal
-    } else if (areaBoton(200, 50, 100, 50)) {
-      estado = "segunda_alt";  // Va al camino alterno
     }
   } else if (estado==="segunda") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="tercera";
-    }
+    }else if (areaBoton(200, 50, 100, 50)) {
+      estado = "tercera_alt";  // Va al camino alterno
+     }
   } else if (estado==="tercera") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="cuarta";
-    } else if (areaBoton(200, 50, 100, 50)) {
-      estado = "cuarta_alt";  // Va al camino alterno
-    }
+    }  
   } else if (estado==="cuarta") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="quinta";
+    }else if (areaBoton(200, 50, 100, 50)) {
+      estado = "quinta_alt";  // Va al camino alterno
     }
   } else if (estado==="quinta") {
     if (areaBoton(50, 50, 100, 50)) {
       estado="sexta";
     }
+  } else if (estado==="sexta") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="septima";}
+   }else if (areaBoton(200, 50, 100, 50)) {
+      estado = "septima_alt";  // Va al camino alterno
+   
+  } else if (estado==="septima") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="octava";
+    }
   }
+  else if (estado==="octava") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="juego";
+    }
+    } else if (estado==="juego") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="decima";
+    }
+  }  else if (estado==="decima") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="onceava";
+    }
+    }  else if (estado==="onceava") {
+    if (areaBoton(50, 50, 100, 50)) {
+      estado="ultima";
+    }
+    }  
 }
 function dibujarBoton (px,py,an,al){
  
